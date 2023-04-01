@@ -28,7 +28,7 @@ class SettingsActivity : AppCompatActivity() {
             setPreferencesFromResource(R.xml.root_preferences, rootKey)
             val preference = preferenceManager.findPreference<Preference>("language")
             preference!!.setOnPreferenceChangeListener { preference, newValue ->
-                Toast.makeText(requireContext(), newValue.toString(), Toast.LENGTH_SHORT).show()
+//                Toast.makeText(requireContext(), newValue.toString(), Toast.LENGTH_SHORT).show()
                 if (newValue == "हिंदी") {
                     languageCode = "hi"
                 }

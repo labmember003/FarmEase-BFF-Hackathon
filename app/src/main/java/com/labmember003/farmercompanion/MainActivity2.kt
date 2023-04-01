@@ -27,7 +27,7 @@ class MainActivity2 : AppCompatActivity() {
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
 
 //        languageCode = "en" // Replace "es" with the language code you want to support
-        Toast.makeText(this, languageCode+"sex", Toast.LENGTH_SHORT).show()
+//        Toast.makeText(this, languageCode+"sex", Toast.LENGTH_SHORT).show()
         val locale = Locale(languageCode)
         Locale.setDefault(locale)
         val config = resources.configuration

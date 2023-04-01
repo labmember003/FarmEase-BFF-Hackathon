@@ -1,11 +1,10 @@
 package com.labmember003.farmercompanion
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.ImageView
 import android.widget.TextView
-import kotlin.system.exitProcess
+import androidx.appcompat.app.AppCompatActivity
 
 class LandActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -18,7 +17,6 @@ class LandActivity : AppCompatActivity() {
         }
         findViewById<TextView>(R.id.tvv2).setOnClickListener {
             val intent = Intent(this, LendFarmActivity::class.java)
-            //intent.putExtra("crop", "Millets")
             startActivity(intent)
         }
         // BOTTOM NAVIGATION

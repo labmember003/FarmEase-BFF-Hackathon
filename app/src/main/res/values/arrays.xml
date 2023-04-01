@@ -22,4 +22,16 @@
         <item>Yes</item>
         <item>No</item>
     </string-array>
+    <string-array name="language_entries" >
+        <item>हिंदी</item>
+        <item>English</item>
+        <item>ਪੰਜਾਬੀ</item>
+        <item>मराठी</item>
+    </string-array>
+    <string-array name="language_values">
+        <item>हिंदी</item>
+        <item>English</item>
+        <item>ਪੰਜਾਬੀ</item>
+        <item>मराठी</item>
+    </string-array>
 </resources>

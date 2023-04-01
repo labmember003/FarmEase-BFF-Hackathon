@@ -28,4 +28,8 @@
     <string name="name_title">Your Name</string>
     <string name="crop_title">Crop You Grow</string>
     <string name="tools">Tools</string>
+    <string name="rice">Rice</string>
+    <string name="wheat">Wheat</string>
+    <string name="millets">Millets</string>
+    <string name="maize">Maize</string>
 </resources>

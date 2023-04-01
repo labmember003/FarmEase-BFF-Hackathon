@@ -1,7 +1,17 @@
-<PreferenceScreen xmlns:app="http://schemas.android.com/apk/res-auto">
+<PreferenceScreen xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
 
     <PreferenceCategory app:title="@string/messages_header"
         app:iconSpaceReserved="false">
+
+        <ListPreference
+            app:entries="@array/language_entries"
+            app:entryValues="@array/language_values"
+            app:key="language"
+            app:title="Preferred Language"
+            app:useSimpleSummaryProvider="true"
+            android:defaultValue="English"
+            app:iconSpaceReserved="false"/>
 
         <EditTextPreference
             app:key="name"

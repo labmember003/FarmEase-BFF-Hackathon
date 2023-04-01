@@ -32,7 +32,9 @@
       <change afterPath="$PROJECT_DIR$/app/src/debug/res/mipmap-xxxhdpi/ic_launcher_foreground.png" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/app/src/debug/res/mipmap-xxxhdpi/ic_launcher_round.png" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/app/src/debug/res/values/ic_launcher_background.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/labmember003/farmercompanion/LoginActivity.kt" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/ic_baseline_notifications_24.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_login.xml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/notification_layout.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/7.3.3/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.3.3/executionHistory/executionHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/7.3.3/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.3.3/executionHistory/executionHistory.lock" afterDir="false" />
@@ -46,7 +48,6 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/labmember003/farmercompanion/MainActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/labmember003/farmercompanion/MainActivity.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -110,6 +111,9 @@
       <recent name="$PROJECT_DIR$/app/src/main/res/drawable-v24" />
     </key>
     <key name="android.template.201773446">
+      <recent name="com.labmember003.farmercompanion" />
+    </key>
+    <key name="android.template.-1759402186">
       <recent name="com.labmember003.farmercompanion" />
     </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">

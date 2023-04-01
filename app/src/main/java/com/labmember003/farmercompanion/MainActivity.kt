@@ -2,6 +2,9 @@ package com.labmember003.farmercompanion
 
 import android.Manifest
 import android.app.Activity
+import android.app.NotificationChannel
+import android.app.NotificationManager
+import android.app.PendingIntent
 import android.content.Context
 import android.content.Intent
 import android.content.pm.PackageManager
@@ -17,6 +20,8 @@ import android.widget.*
 import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat
+import androidx.core.app.NotificationCompat
+import androidx.core.app.NotificationManagerCompat
 import com.airbnb.lottie.LottieAnimationView
 import com.google.android.gms.location.FusedLocationProviderClient
 import com.google.android.gms.location.LocationServices
@@ -28,7 +33,8 @@ import java.util.*
 
 
 class MainActivity : AppCompatActivity() {
-
+    private val CHANNEL_ID = "my_channel_id"
+    private val NOTIFICATION_ID = 1001
     //val CITY: String = "dhaka,bd"
     var CITY: String = "mumbai"
     val API: String = "06c921750b9a82d8f5d1294e1586276f" // Use API key
@@ -45,6 +51,17 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
 
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+            val name = getString(R.string.channel_name)
+            val descriptionText = getString(R.string.channel_description)
+            val importance = NotificationManager.IMPORTANCE_HIGH
+            val channel = NotificationChannel(CHANNEL_ID, name, importance).apply {
+                description = descriptionText
+            }
+            val notificationManager: NotificationManager =
+                getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
+            notificationManager.createNotificationChannel(channel)
+        }
 
         fusedLocationProviderClient = LocationServices.getFusedLocationProviderClient(this)
         //tvLatitude = findViewById(R.id.)
@@ -302,7 +319,7 @@ class MainActivity : AppCompatActivity() {
 
 
 
-
+                sendNotification(crop?:"Rice", rainfallWork.text.toString(), temperatureWork.text.toString(),  humidityWork.text.toString())
                 findViewById<TextView>(R.id.address).text = address
                 findViewById<TextView>(R.id.updated_at).text =  updatedAtText
                 findViewById<TextView>(R.id.status).text = weatherDescription.capitalize()
@@ -437,4 +454,26 @@ class MainActivity : AppCompatActivity() {
 
 
     }
+    private fun sendNotification(cropName: String, rainfallWork: String, temperatureWork: String, humidityWork: String) {
+        val intent = Intent(this, MainActivity::class.java)
+        val pendingIntent = PendingIntent.getActivity(this, 0, intent, PendingIntent.FLAG_IMMUTABLE)
+        val notificationLayout = RemoteViews(packageName, R.layout.notification_layout)
+        notificationLayout.setTextViewText(R.id.notification_title, "Custom Notification Title")
+        notificationLayout.setTextViewText(R.id.notification_message, "Custom Notification Message, Custom Notification Message Custom Notification MessageCustom Notification MessageCustom Notification MessageCustom Notification MessageCustom Notification MessageCustom Notification MessageCustom Notification MessageCustom Notification MessageCustom Notification MessageCustom Notification Message")
+
+        val notification = NotificationCompat.Builder(this, CHANNEL_ID)
+            .setSmallIcon(R.drawable.ic_baseline_notifications_24)
+            .setContentIntent(pendingIntent)
+            .setCustomContentView(notificationLayout)
+            .setContentTitle(cropName)
+            .setContentText(rainfallWork.substringAfter(",") + "," + temperatureWork.substringAfter(",") + ","
+                + humidityWork.substringAfter(","))
+            .setPriority(NotificationCompat.PRIORITY_HIGH)
+            .setAutoCancel(true)
+            .build()
+
+        val notificationManager = NotificationManagerCompat.from(this)
+        notificationManager.notify(NOTIFICATION_ID, notification)
+    }
+
 }

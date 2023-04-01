@@ -11,9 +11,12 @@ import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.NavigationUI
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.labmember003.farmercompanion.databinding.ActivityMain2Binding
+import java.util.*
 import kotlin.system.exitProcess
 
+public var languageCode = "en"
 class MainActivity2 : AppCompatActivity() {
+
     private lateinit var appBarConfiguration: AppBarConfiguration
     private lateinit var binding: ActivityMain2Binding
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -22,6 +25,14 @@ class MainActivity2 : AppCompatActivity() {
         setContentView(binding.root)
         //setSupportActionBar(binding.toolbar)
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
+
+//        languageCode = "en" // Replace "es" with the language code you want to support
+        Toast.makeText(this, languageCode+"sex", Toast.LENGTH_SHORT).show()
+        val locale = Locale(languageCode)
+        Locale.setDefault(locale)
+        val config = resources.configuration
+        config.setLocale(locale)
+        baseContext.resources.updateConfiguration(config, baseContext.resources.displayMetrics)
         //val navController = findNavController(R.id.nav_host_fragment_content_main)
         //appBarConfiguration = AppBarConfiguration(navController.graph)
         //NavigationUI.setupActionBarWithNavController(this, navController, binding.drawerLayout)
